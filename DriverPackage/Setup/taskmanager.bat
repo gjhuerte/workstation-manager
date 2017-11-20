@@ -1,4 +1,8 @@
-set /p taskmanager="Task Manager [ Enable - E ] [ Disable - D ]:" 
+echo **Task Manager**
+echo [ Enable - E ]
+echo [ Disable - D ]
+echo [ Any other key to cancel ]
+set /p taskmanager="Choose:" 
 
 if "%taskmanager%"=="E" (
 	REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 0 /f
@@ -7,3 +11,5 @@ if "%taskmanager%"=="E" (
 	REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f
 	echo Task Manager Disabled
 )
+
+exit /B

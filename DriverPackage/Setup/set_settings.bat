@@ -1,4 +1,8 @@
-set /p settings="Settings [ Enable - E ] [ Disable - D ]:" 
+echo **Settings**
+echo [ Enable - E ]
+echo [ Disable - D ]
+echo [ Any other key to cancel ]
+set /p settings="Choose:" 
 
 if "%settings%"=="E" (
 	RegistryKey\Enable\enable.settings.reg
@@ -11,3 +15,5 @@ if "%settings%"=="E" (
 	RegistryKey\Disable\Disable.Active.Desktop.reg
 	echo Settings Disabled
 )
+
+exit /B
